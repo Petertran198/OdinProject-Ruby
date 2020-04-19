@@ -4,5 +4,5 @@ require './player.rb'
 require './winning_coordinates.rb'
 
 
-game = Game.new("Tic Tac Toe")
+game = Game.new(name: "Tic Tac Toe")
 game.start 
