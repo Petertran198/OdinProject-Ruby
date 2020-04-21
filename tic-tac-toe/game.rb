@@ -1,11 +1,9 @@
 class Game 
 
-    def initialize(name:)
+    def initialize(name:, winning_coords:, board: )
       puts "Lets Play #{name}"
-      @winning = WinningCoordinates.new([ 
-        [0,1,2],[3,4,5],[6,7,8],
-        [0,3,6],[1,4,7],[2,5,8],
-        [0,4,8],[2,4,6]]).coordinates
+      @winning = winning_coords
+      @board = board
     end
 
 
@@ -17,7 +15,6 @@ class Game
       symbol_check(player1: @player1, player2: @player2)
       puts "Okay #{@player1.name.capitalize} you are #{@player1.symbol} and #{@player2.name.capitalize} you are #{@player2.symbol}"
       @won = false 
-      @board = Board.new
       keep_playing(p1: @player1, p2: @player2, winning_cordinates: @winning)
     end
 
